@@ -17,7 +17,7 @@ export async function generateMetadata({params: { userId } }: Params): Promise<M
     const userData : Promise<User> = getUser(userId);
     const user: User = await userData;
     // metadata for not-found page
-    if(!user.name){
+    if(!user){
         return {
             title: "User Not Found"
         }
